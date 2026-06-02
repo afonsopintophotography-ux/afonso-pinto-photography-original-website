@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <link rel="icon" href="imagens favicon/favicon.ico.jpeg" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre mim | Afonso Pinto Photography</title>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<style>
+
+/* ===== ANIMAÇÃO TIPO APPLE ===== */
+
+.animar-apple {
+  opacity: 0;
+  transform: translateY(60px);
+  filter: blur(10px);
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s cubic-bezier(0.22,1,0.36,1),
+    filter 1.2s ease;
+}
+
+.animar-apple.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="banner">
+
+<img src="imagens inicio/logo afonso pinto photography.png" class="logo">
+
+<div class="titulo">
+<h1>Afonso Pinto Photography</h1>
+<p>Mais do que tirar fotografias, eternizo momentos!</p>
+</div>
+
+</header>
+
+<nav>
+    <ul>
+       <li><a href="index.html">Início</a></li>
+       <li><a href="sobremim.html">Sobre mim</a></li>
+        <li><a href="osmeustrabalhos.html">Os meus trabalhos</a></li>
+    </ul>
+</nav>
+
+<!-- SECÇÃO SOBRE MIM -->
+<main class="sobre-mim">
+
+<h2 class="animar-apple">Sobre mim</h2>
+
+<div class="conteudo-sobre">
+
+<div class="foto-perfil animar-apple">
+<img src="imagens sobre mim/myself.png" alt="Fotografia de Afonso Pinto">
+</div>
+
+<div class="texto-sobre animar-apple">
+
+<p>
+Nascido a 11 de setembro de 2008, Afonso Pinto é um jovem apaixonado pelo 
+mundo da fotografia e fascinado pela captura e conversão de momentos simples a 
+memórias eternas.
+</p>
+
+<p>
+Atualmente frequenta o 2º Ano do Curso Profissional Técnico de Multimédia na 
+Escola Secundária José Régio, área na qual se identifica bastante.
+Futuramente, ambiciona frequentar o Ensino Superior na ESMAD (Escola Superior 
+de Media Artes e Design), na qual pretende tirar uma Licenciatura em Fotografia.
+</p>
+
+<p>
+Nos tempos livres, Afonso dedica-se á fotografia e alia-se á captura de momentos 
+espontâneos. A sua máquina fotográfica é a sua melhor amiga, indo com o mesmo 
+para todo o lado. 
+</p>
+
+<p>
+Afonso Pinto transforma momentos em histórias visuais, usando a fotografia para 
+revelar detalhes que muitas vezes passam despercebidos.
+</p>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- NOVA SECÇÃO REDES SOCIAIS -->
+<section class="redes-sociais">
+    <h3>Segue-me nas redes sociais</h3>
+
+    <div class="icones-redes">
+        <a href="https://www.instagram.com/afonsopinto_photography/" target="_blank">
+            <img src="imagens contactos/iconinsta.png" alt="Instagram" class="icone">
+        </a>
+
+        <a href="https://wa.me/351931894827" target="_blank">
+            <img src="imagens contactos/iconwpp.png" alt="WhatsApp" class="icone">
+        </a>
+
+        <a href="mailto:afonsopintophotography@gmail.com" target="_blank">
+            <img src="imagens contactos/icone-mail.png" alt="E-mail" class="icone">
+        </a>
+    </div>
+</section>
+
+<footer>
+<p>Criado por: Afonso Pinto</p>
+<p>Contacto: <a href="mailto:afonsopintophotography@gmail.com">afonsopintophotography@gmail.com</a></p>
+</footer>
+
+<script>
+
+/* ===== ANIMAÇÃO SCROLL ESTILO APPLE ===== */
+
+const elementosApple = document.querySelectorAll(".animar-apple");
+
+const observerApple = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{
+  threshold: 0.15
+});
+
+elementosApple.forEach(el => observerApple.observe(el));
+
+</script>
+
+</body>
+</html>

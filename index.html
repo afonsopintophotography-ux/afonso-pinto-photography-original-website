@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <link rel="icon" href="imagens favicon/favicon.ico.jpeg" type="image/x-icon">
+<meta charset="UTF-8">
+<title>Home | Afonso Pinto Photography</title>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+<header class="banner">
+
+  <img src="imagens inicio/logo afonso pinto photography.png" class="logo">
+
+  <div class="titulo">
+    <h1>Afonso Pinto Photography</h1>
+    <p>Mais do que tirar fotografias, eternizo momentos!</p>
+  </div>
+
+</header>
+
+<nav>
+    <ul>
+       <li><a href="index.html">Inicio</a></li>
+       <li><a href="sobremim.html">Sobre mim</a></li>
+        <li><a href="osmeustrabalhos.html">Os meus trabalhos</a></li>
+    </ul>
+</nav>
+
+<!-- HERO IMAGE COMPLETA ABAIXO DO MENU -->
+<section class="hero">
+  <img src="imagens inicio/Banner1 sem fundo.png" alt="Banner Principal">
+</section>
+
+<main>
+
+<div class="media-container">
+
+  <div class="media-box">
+    <img src="imagens inicio/imgemanuel.JPG" alt="">
+  </div>
+
+  <div class="media-box">
+    <video src="imagens inicio/video afonso pinto photography (2025 recap).mp4" controls allowfullscreen></video>
+  </div>
+
+  <div class="media-box">
+    <img src="imagens inicio/imgfut.jpg" alt="">
+  </div>
+
+</div>
+
+<div class="media-texto animar-texto">
+
+  <h1>Sobre o projeto</h1>
+  
+  <p>
+    Este site foi desenvolvido, com o principal objetivo de dar a conhecer o meu trabalho aos meus clientes, proporcionando desse modo uma experiência única aos mesmos.
+  </p>
+
+  <p>
+    Atualmente frequento o segundo ano do Curso Profissional Técnico de Multimédia, na Escola Secundária José Regio, em Vila do Conde.
+  </p>
+
+  <p> 
+    O principal objetivo deste website é divulgar o meu trabalho enquanto fotografo através do meu portfólio, permitindo que mais pessoas conheçam a minha experiência artística e evolução na área da fotografia.
+  </p>
+
+</div>
+
+</main>
+
+<!-- NOVA SECÇÃO REDES SOCIAIS -->
+<section class="redes-sociais">
+    <h3>Segue-me nas redes sociais</h3>
+
+    <div class="icones-redes">
+        <a href="https://www.instagram.com/afonsopinto_photography/" target="_blank">
+            <img src="imagens contactos/iconinsta.png" alt="Instagram" class="icone">
+        </a>
+
+        <a href="https://wa.me/351931894827" target="_blank">
+            <img src="imagens contactos/iconwpp.png" alt="WhatsApp" class="icone">
+        </a>
+
+        <a href="mailto:afonsopintophotography@gmail.com" target="_blank">
+            <img src="imagens contactos/icone-mail.png" alt="E-mail" class="icone">
+        </a>
+    </div>
+</section>
+
+<footer style="text-align:center;padding:40px;">
+  <p>Criado por: Afonso Pinto</p>
+  <p>Contacto: <a href="mailto:afonsopintophotography@gmail.com">afonsopintophotography@gmail.com</a></p>
+</footer>
+
+<script>
+
+const elementos = document.querySelectorAll(".media-box, .animar-texto");
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+elementos.forEach(el=>observer.observe(el));
+
+</script>
+
+</body>
+</html>

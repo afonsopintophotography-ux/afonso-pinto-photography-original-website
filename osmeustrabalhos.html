@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <link rel="icon" href="imagens favicon/favicon.ico.jpeg" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Os meus trabalhos | Afonso Pinto Photography</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<header class="banner">
+
+    <!-- LOGOTIPO -->
+    <img src="imagens inicio/logo afonso pinto photography.png" alt="Logotipo Afonso Pinto Photography" class="logo">
+
+    <div class="titulo">
+        <h1>Afonso Pinto Photography</h1>
+        <p>Mais do que tirar fotografias, eternizo momentos!</p>
+    </div>
+
+</header>
+
+
+<nav>
+    <ul>
+       <li><a href="index.html">Início</a></li>
+       <li><a href="sobremim.html">Sobre mim</a></li>
+        <li><a href="osmeustrabalhos.html">Os meus trabalhos</a></li>
+    </ul>
+</nav>
+
+<div class="galeria">
+
+<img src="imagens o meu trabalho/1.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/2.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/3.jpeg" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/4.jpeg" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/5.jpg" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/6.jpg" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/7.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/8.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/9.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/10.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/11.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/12.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/13.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/14.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/15.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/16.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/17.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/18.JPG" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/19.jpg" onclick="abrirImagem(this)">
+<img src="imagens o meu trabalho/20.jpg" onclick="abrirImagem(this)">
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+<span class="fechar" onclick="fecharImagem()">✖</span>
+<span class="seta esquerda" onclick="anterior()">❮</span>
+<img id="lightbox-img">
+<span class="seta direita" onclick="proxima()">❯</span>
+</div>
+
+<!-- NOVA SECÇÃO REDES SOCIAIS -->
+<section class="redes-sociais">
+    <h3>Segue-me nas redes sociais</h3>
+
+    <div class="icones-redes">
+        <a href="https://www.instagram.com/afonsopinto_photography/" target="_blank">
+            <img src="imagens contactos/iconinsta.png" alt="Instagram" class="icone">
+        </a>
+
+        <a href="https://wa.me/351931894827" target="_blank">
+            <img src="imagens contactos/iconwpp.png" alt="WhatsApp" class="icone">
+        </a>
+
+        <a href="mailto:afonsopintophotography@gmail.com" target="_blank">
+            <img src="imagens contactos/icone-mail.png" alt="E-mail" class="icone">
+        </a>
+    </div>
+</section>
+
+<footer>
+<p>Criado por: Afonso Pinto</p>
+<p>Contacto: <a href="mailto:afonsopintophotography@gmail.com">afonsopintophotography@gmail.com</a></p>
+</footer>
+
+<script>
+
+let imagens = document.querySelectorAll(".galeria img");
+let lightbox = document.getElementById("lightbox");
+let lightboxImg = document.getElementById("lightbox-img");
+
+let indexAtual = 0;
+
+function abrirImagem(img){
+    indexAtual = [...imagens].indexOf(img);
+    lightbox.style.display="flex";
+    lightboxImg.src = img.src;
+}
+
+function fecharImagem(){
+    lightbox.style.display="none";
+}
+
+function proxima(){
+    indexAtual++;
+    if(indexAtual >= imagens.length) indexAtual = 0;
+    lightboxImg.src = imagens[indexAtual].src;
+}
+
+function anterior(){
+    indexAtual--;
+    if(indexAtual < 0) indexAtual = imagens.length-1;
+    lightboxImg.src = imagens[indexAtual].src;
+}
+
+/* fechar com ESC */
+document.addEventListener("keydown", function(e){
+    if(e.key==="Escape") fecharImagem();
+});
+
+</script>
+
+</body>
+</html>
